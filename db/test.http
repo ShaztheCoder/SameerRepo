@@ -1,0 +1,95 @@
+###get employee set
+http://localhost:4004/odata/v4/service-catalog/EmployeeSet
+
+###Post employeeSetPOST
+POST  http://localhost:4004/odata/v4/service-catalog/EmployeeSet
+Content-Type: application/json
+
+{
+      "nameFirst": "Shaz",
+      "nameMiddle": null,
+      "nameLast": "Spring",
+      "nameInitials": null,
+      "sex": "F",
+      "language": "E",
+      "email": "sally.spring@itelo.com",
+      "loginName": "SPRINGS",
+      "Currency_code": "USD",
+      "salaryAmount": "55549",
+      "accountNumber": "111222333",
+      "bankName": "My Bank of Antioch"
+}
+
+###GET single
+GET  http://localhost:4004/odata/v4/service-catalog/EmployeeSet/ac988b47-2574-4042-bcfd-1a8c0701acbf
+Content-Type: application/json
+
+###PUT
+PUT http://localhost:4004/odata/v4/service-catalog/EmployeeSet/9188df2e-4ddf-4861-92db-22b6c30c305b
+Content-Type: application/json
+
+{
+   "salaryAmount": "111",
+      "accountNumber": "999"
+}
+
+###PATCH 
+PATCH  http://localhost:4004/odata/v4/service-catalog/EmployeeSet/ac988b47-2574-4042-bcfd-1a8c0701acbf
+Content-Type: application/json
+
+{
+  "nameFirst": "Shaz",
+  "nameMiddle": null,
+  "nameLast": "Spring",
+  "nameInitials": null,
+  "sex": "F",
+  "language": "E",
+  "phoneNumber": null,
+  "email": "sally.spring@itelo.com",
+  "loginName": "SPRINGS",
+  "Currency_code": "USD",
+  "salaryAmount": "909049",
+  "accountNumber": "222333",
+  "bankId": null,
+  "bankName": "My Bank of Antioch"
+}
+
+
+###get Read Employee
+GET http://localhost:42283/odata/v4/my-serv-demo/employeeReadSet
+
+###Update Employee
+PUT http://localhost:42283/odata/v4/my-serv-demo/employeeUpdateSet/02BD2137-0890-1EEA-A6C2-BB55C19787FB
+Content-Type: application/json
+
+{
+      "ID": "02BD2137-0890-1EEA-A6C2-BB55C19787FB",
+      "nameFirst": "Shahezad",
+      "nameLast": "Sayyed"
+
+}
+
+###Get 5 orders
+GET http://localhost:4004/odata/v4/SeviceCatalog/POs
+
+### get
+GET http://localhost:4004/odata/v4/SeviceCatalog/POs('74867AD200E41EDBA5D8B0C98DC2C052')
+###boost the order
+POST http://localhost:4004/odata/v4/SeviceCatalog/POs('74867AD200E41EDBA5D8B0C98DC2C052')/ServiceCatalog.boost
+Content-Type: application/json
+
+{}
+
+###GET largest
+http://localhost:4004/odata/v4/SeviceCatalog/POs('74867AD200E41EDBA5D8B0C98DC2C052')/ServiceCatalog.largestOrder()
+
+###GET V2 the order
+GET  http://localhost:4004/v2/odata/v4/SeviceCatalog/POs('74867AD200E41EDBA5D8B0C98DC2C052')
+
+###boost the order
+POST  http://localhost:4004/v2/odata/v4/SeviceCatalog/POs_boost?NODE_KEY=74867AD200E41EDBA5D8B0C98DC2C052
+Content-Type: application/json
+
+{}
+### get largest
+GET  http://localhost:4004/v2/odata/v4/SeviceCatalog/POs_largestOrder()
